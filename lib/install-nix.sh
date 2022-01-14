@@ -4,7 +4,7 @@ set -euo pipefail
 scriptuser_created=no
 scriptuser=nix-installer-user
 
-if ! id "$scriptuser" &>/dev/null
+if [ ! id "$scriptuser" &>/dev/null ]; then
   adduser --system "$scriptuser"
   scriptuser_created=yes
 fi
